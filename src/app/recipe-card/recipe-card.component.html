@@ -1,0 +1,14 @@
+<div>
+    <h2>{{recipe.title}}</h2>
+    <p>{{recipe.desc}}</p>
+    <img src="{{recipe.img}}" alt="food img"/>
+    <!-- <p>{{recipe.incrediants}}</p> -->
+    <h4>Ingredients:</h4>
+    <ul>
+        <li *ngFor="let inc of recipe.ingredients">
+            {{inc}}
+        </li>
+    </ul>
+    <button (click)="recipeInfo()">info</button>
+    <button (click)="addToFav()">Add to Favorites</button>
+</div>

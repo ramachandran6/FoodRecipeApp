@@ -1,0 +1,12 @@
+<div>
+    <img src="{{recipeList.img}}">
+    <h2>{{recipeList.title}}</h2>
+    <p>{{recipeList.desc}}</p>
+    <h4>Ingredients:</h4>
+    <ul>
+        <li *ngFor="let inc of recipeList.ingredients">
+            {{inc}}
+        </li>
+    </ul>
+    <button (click)="goBack()">back</button>
+</div>

@@ -1,0 +1,13 @@
+<form [formGroup] = "incrediantsForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="incrediant"/><br>
+    <button >Add</button>
+</form>
+
+<ul>
+    <li *ngFor="let incrediant of incrediants">
+        {{incrediant}}
+    </li>
+</ul>
+
+
+<button (click)="goToRecipe()">Recipe page</button>
