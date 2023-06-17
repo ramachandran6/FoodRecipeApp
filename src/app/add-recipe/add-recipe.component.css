@@ -1,0 +1,28 @@
+.example-form {
+    /* display: flex;
+    gap: 10px;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto; */
+    display: grid;
+    margin: 50px;
+    padding: 50px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    place-content: center;
+    border: 10px solid rgba(208, 223, 229, 0.8);
+    border-radius: 16px;
+    grid-template: repeat(auto-fit,minmax(200px,0));
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+  
+/* .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input{
+    padding: 15px;
+    background-color: azure;
+} */
+
+  

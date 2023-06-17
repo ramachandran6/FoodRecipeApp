@@ -1,0 +1,9 @@
+.inc-det{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.example-form{
+    margin: 20px;
+}

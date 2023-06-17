@@ -12,7 +12,7 @@ export class ViewRecipeComponent {
   constructor(
     private router: ActivatedRoute,
     private recipeService: RecipeServicesService,
-    private route:Router
+    private route: Router
   ) {}
 
   recipeList: recipeTemp = {
@@ -26,13 +26,13 @@ export class ViewRecipeComponent {
     this.router.paramMap.subscribe((route) => {
       const id = route.get('id') as string;
       // console.log(id)
-      this.recipeService
-        .getRecipeById(id as string)
-        .subscribe((data) => { this.recipeList = data});
+      this.recipeService.getRecipeById(id as string).subscribe((data) => {
+        this.recipeList = data;
+      });
     });
   }
 
   goBack() {
-    this.route.navigate(['/recipe'])
+    this.route.navigate(['/recipe']);
   }
 }

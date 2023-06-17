@@ -1,14 +1,54 @@
-<div>
-    <h2>{{recipe.title}}</h2>
-    <p>{{recipe.desc}}</p>
-    <img src="{{recipe.img}}" alt="food img"/>
-    <!-- <p>{{recipe.incrediants}}</p> -->
-    <h4>Ingredients:</h4>
-    <ul>
-        <li *ngFor="let inc of recipe.ingredients">
-            {{inc}}
-        </li>
-    </ul>
-    <button (click)="recipeInfo()">info</button>
-    <button (click)="addToFav()">Add to Favorites</button>
+<!-- style links -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+/>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
+
+<!-- code starts here!! -->
+
+<div class="card" *ngFor="let recipe of recipes">
+  <img class="card-img-top" src="{{ recipe.img }}" alt="Card image cap" />
+  <div class="card-body">
+    <h3 class="card-title">{{ recipe.title }}</h3>
+    <!-- <div  *ngIf="showDesc; else elseBlock"   (click) = "toggleDesc()">
+        <mat-icon>keyboard_arrow_up</mat-icon>
+        <p>{{ recipe.desc }}</p>
+    </div>
+    <ng-template #elseBlock>
+        <mat-icon (click) = "toggleDesc()">keyboard_arrow_up</mat-icon> 
+        <p>{{ recipe.desc }}</p>
+    </ng-template>
+    <ul class="">
+    
+    <li *ngFor="let inc of recipe.ingredients">
+      {{ inc }}
+    </li>
+  </ul> -->
+  <div class="card-buttons">
+    <button type="button" class="btn btn-info" (click)="recipeInfo(recipe.id)">
+      info
+    </button>
+    <button type="button" class="btn btn-success" (click)="addToFav(recipe.id)">
+      Add to Favorites
+    </button>
+  </div>
+</div>
 </div>

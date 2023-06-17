@@ -11,12 +11,19 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { ViewRecipeComponent } from './view-recipe/view-recipe.component';
 import { FavComponentComponent } from './fav-component/fav-component.component';
+import { AllRecipeComponent } from './all-recipe/all-recipe.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponentComponent },
-  { path: 'recipe', component: AddRecipeComponent },
+  { path: 'addRecipe', component: AddRecipeComponent },
   { path: 'recipe/:id', component: ViewRecipeComponent },
-  {path:'favorites',component:FavComponentComponent}
+  { path: 'favorites', component: FavComponentComponent },
 ];
 @NgModule({
   declarations: [
@@ -26,6 +33,8 @@ const routes: Routes = [
     RecipeCardComponent,
     ViewRecipeComponent,
     FavComponentComponent,
+    AllRecipeComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +42,11 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,14 @@
+.movie-cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px;
+}
+
+app-recipe-card{
+    display: flex;
+    flex-direction: column;
+}

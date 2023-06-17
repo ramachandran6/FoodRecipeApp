@@ -1,13 +1,25 @@
-<form [formGroup] = "incrediantsForm" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="incrediant"/><br>
-    <button >Add</button>
-</form>
-
-<ul>
-    <li *ngFor="let incrediant of incrediants">
-        {{incrediant}}
+<div class="inc-det">
+  <form
+    class="example-form"
+    [formGroup]="ingredientsForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label>Ingredients</mat-label>
+      <input matInput type="text" #ing formControlName="ingredient" />
+      <mat-error *ngIf="ingredient?.errors?.['required']">
+        Please fill the title
+      </mat-error>
+    </mat-form-field>
+    <br />
+    <button>Add</button>
+  </form>
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+      {{ ingredient }}
+      <button (click)="removeIngredient(ingredient)">remove</button>
     </li>
-</ul>
+  </ul>
+</div>
 
-
-<button (click)="goToRecipe()">Recipe page</button>
+<app-all-recipe [recipes]="filteredRecipes"></app-all-recipe>

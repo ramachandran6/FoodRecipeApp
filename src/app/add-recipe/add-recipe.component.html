@@ -1,15 +1,47 @@
-<form [formGroup]="recipeForm" (ngSubmit)="onSubmitRec()">
-  title:<input type="text" formControlName="title" /><br />
-  description:<input type="text" formControlName="desc" /><br />
-  image url :<input type="text" formControlName="img" /><br />
-  Incrediants : <form [formGroup]="incrediantsForm" (ngSubmit)="onSubmitInc()">
-    <input type="text" formControlName="incrediant" /><br />
-    <button>Add</button>
-  </form>
-  <button>Add</button>
+<form class="example-form" [formGroup]="recipeForm" (ngSubmit)="onSubmitRec()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input #tit matInput type="text" formControlName="title" />
+    <mat-error *ngIf="title?.errors?.['required']">
+      Please fill the title
+    </mat-error>
+  </mat-form-field><br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <input #des matInput type="text" formControlName="desc" />
+    <mat-error *ngIf="desc?.errors?.['required']">
+      Please fill the description
+    </mat-error>
+    <mat-error *ngIf="desc?.errors?.['minlength']">
+      Minimum length should be 10
+    </mat-error>
+  </mat-form-field><br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Image Url</mat-label>
+    <input #imag matInput type="text" formControlName="img" />
+    <mat-error *ngIf="img?.errors?.['required']">
+      Please fill the Url
+    </mat-error>
+    <mat-error *ngIf="img?.errors?.['pattern']"> Need a valid Url </mat-error>
+  </mat-form-field><br>
+  <form
+    class="ingredient-form"
+    [formGroup]="ingredientsForm"
+    (ngSubmit)="onSubmitInc()"
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label>Ingredients</mat-label>
+      <input #ing matInput type="text" formControlName="ingredient" />
+      <mat-error *ngIf="title?.errors?.['required']">
+        please fill the ingredients
+      </mat-error>
+    </mat-form-field>
+    <button>Add Ingredient</button>
+    <ul>
+      <li *ngFor="let inc of incs">{{inc}}</li>
+    </ul>
+  </form><br>
+  <button>Add Recipe</button>
 </form>
 
-<app-recipe-card *ngFor="let a of recipeList" [recipe]="a"> </app-recipe-card>
-
 <button (click)="goToFavo()">Favorites</button>
-
