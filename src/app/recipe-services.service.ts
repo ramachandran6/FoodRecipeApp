@@ -41,17 +41,11 @@ export class RecipeServicesService {
             'https://648a952b17f1536d65e94f02.mockapi.io/favorites',
             this.obj
           )
-          .subscribe((val) => console.log(val));
+          .subscribe((val) => {
+            console.log(val);
+          });
         // console.log(this.favObj)
       });
-    // this.favObj = {
-    //   title : this.obj.title,
-    //     desc : this.obj.desc,
-    //     img : this.obj.img,
-    //     ingredients:this.obj.ingredients
-    // }
-    // console.log(this.favObj)
-    // this.http.post<recipeTemp>('https://648a952b17f1536d65e94f02.mockapi.io/favorites',this.obj).subscribe((val)=> console.log(val))
   }
   getFav() {
     return this.http.get(
