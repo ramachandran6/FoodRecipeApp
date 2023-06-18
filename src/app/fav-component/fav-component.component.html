@@ -9,7 +9,7 @@
         <h2>{{recipe.title}}</h2>
         <p>{{recipe.desc}}</p>
     </div>
-    <div>
+    <div class="ingredient">
         <h4>Ingredients:</h4>
         <ul  class="ing">
             <li *ngFor="let inc of recipe.ingredients">
@@ -17,5 +17,9 @@
             </li>
         </ul>
     </div>
-    <button class="btn" (click)="delete(i)">Delete</button>
+    <div class="buttons">
+        <button class="btn" (click)="delete(i)">Delete</button>
+    <button class="btn" (click)="recipeInfo(recipe.id)">Info</button>
+    </div>
+    
 </div>

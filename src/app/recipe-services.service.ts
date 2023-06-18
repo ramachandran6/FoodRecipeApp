@@ -14,12 +14,18 @@ export class RecipeServicesService {
     img: '',
     desc: '',
     ingredients: [],
+    cookingTime: '',
+    preparationSteps: [],
+    servingSize: '',
   };
   favObj: recipeTemp = {
     title: '',
     img: '',
     desc: '',
     ingredients: [],
+    cookingTime: '',
+    preparationSteps: [],
+    servingSize: '',
   };
   addFav(id: string) {
     this.http
@@ -53,12 +59,12 @@ export class RecipeServicesService {
     );
   }
   getRecipeByIngredients(ingredients: string) {
+    console.log(ingredients);
     return this.http.get(
       `https://648a952b17f1536d65e94f02.mockapi.io/recipe?ingredients=${ingredients}`
+      // 'https://648a952b17f1536d65e94f02.mockapi.io/recipe?ingredients',{params:{ingredients}}
     );
   }
-
-
 
   getRecipeById(id: string) {
     return this.http

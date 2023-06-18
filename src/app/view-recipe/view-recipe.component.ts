@@ -20,6 +20,9 @@ export class ViewRecipeComponent {
     img: '',
     desc: '',
     ingredients: [],
+    cookingTime: '',
+    preparationSteps: [],
+    servingSize: '',
   };
 
   ngOnInit() {

@@ -15,7 +15,6 @@ export class AllRecipeComponent {
     // this.recipeList$ = ;
     this.getRecipes().subscribe((val: any) => {
       this.recipeList = val;
-      console.log(val);
     });
   }
   recipeList = [];

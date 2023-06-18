@@ -3,7 +3,8 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-evenly;
-    width: 1200px;
+    flex-wrap: wrap;
+    max-width: 1200px;
     height: 250px;
     margin: 50px;
     padding: 20px;
@@ -24,4 +25,35 @@ img{
     align-content: start;
     list-style: none;
 }
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media(max-width:1087px){
+    .ingredient{
+        display: none;
+    }
+    .tit-des{
+        width: 200px;
+    }
+    .fav{
+        height: 300px;
+    }
+}
 
+@media(max-width:777px){
+    .tit-des{
+        display: none;
+    }
+}
+
+@media(max-width:511px){
+    .tit-des{
+        display: none;
+    }
+    .fav{
+        height: 400px;
+    }
+    
+}

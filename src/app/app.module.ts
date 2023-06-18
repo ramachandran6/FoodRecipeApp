@@ -18,9 +18,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RecipesComponent } from './recipes/recipes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponentComponent },
+  { path: 'recipes', component: RecipesComponent },
   { path: 'addRecipe', component: AddRecipeComponent },
   { path: 'recipe/:id', component: ViewRecipeComponent },
   { path: 'favorites', component: FavComponentComponent },
@@ -35,6 +37,7 @@ const routes: Routes = [
     FavComponentComponent,
     AllRecipeComponent,
     NavbarComponent,
+    RecipesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<div>
+<div class="info">
     <img src="{{recipeList.img}}">
     <h2>{{recipeList.title}}</h2>
     <p>{{recipeList.desc}}</p>
@@ -8,5 +8,11 @@
             {{inc}}
         </li>
     </ul>
-    <button (click)="goBack()">back</button>
+    <p>Cooking Time : {{recipeList.cookingTime}}</p>
+    <ul>
+        <li *ngFor="let step of recipeList.preparationSteps">
+            {{step}}
+        </li>
+    </ul>
+    <p>Serving Size : {{recipeList.servingSize}}</p>
 </div>

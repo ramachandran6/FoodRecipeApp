@@ -1,9 +1,13 @@
 .card{
-    width: 300px;
-    height: 100%;
+    width: 800px;
+    height: 250px;
     padding-bottom: 20px;
     font-family:'Roboto',sans-serif ;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .card-body > h3{
@@ -14,6 +18,8 @@
 }
 .card-img-top{
     height: 250px;
+    width: 500px;
+    object-fit: cover;
 }
 
 .list-group{
@@ -26,6 +32,22 @@ button{
 
 .card-buttons{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    flex-direction: row;
+
+}
+
+@media(max-width:660px){
+    .card-buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media(max-width:551px){
+    .card-body{
+        padding: 0px;
+    }
 }

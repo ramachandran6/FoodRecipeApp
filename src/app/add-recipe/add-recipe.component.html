@@ -4,8 +4,8 @@
     <input #tit matInput type="text" formControlName="title" />
     <mat-error *ngIf="title?.errors?.['required']">
       Please fill the title
-    </mat-error>
-  </mat-form-field><br>
+    </mat-error> </mat-form-field
+  ><br />
   <mat-form-field class="example-full-width">
     <mat-label>Description</mat-label>
     <input #des matInput type="text" formControlName="desc" />
@@ -14,16 +14,18 @@
     </mat-error>
     <mat-error *ngIf="desc?.errors?.['minlength']">
       Minimum length should be 10
-    </mat-error>
-  </mat-form-field><br>
+    </mat-error> </mat-form-field
+  ><br />
   <mat-form-field class="example-full-width">
     <mat-label>Image Url</mat-label>
     <input #imag matInput type="text" formControlName="img" />
     <mat-error *ngIf="img?.errors?.['required']">
       Please fill the Url
     </mat-error>
-    <mat-error *ngIf="img?.errors?.['pattern']"> Need a valid Url </mat-error>
-  </mat-form-field><br>
+    <mat-error *ngIf="img?.errors?.['pattern']">
+      Need a valid Url
+    </mat-error> </mat-form-field
+  ><br />
   <form
     class="ingredient-form"
     [formGroup]="ingredientsForm"
@@ -36,12 +38,47 @@
         please fill the ingredients
       </mat-error>
     </mat-form-field>
-    <button>Add Ingredient</button>
+    <button class="btn">Add Ingredient</button>
     <ul>
-      <li *ngFor="let inc of incs">{{inc}}</li>
+      <li *ngFor="let inc of incs; let i = index">
+        {{ inc }} <button (click)="removeIng(inc)">remove</button>
+      </li>
     </ul>
-  </form><br>
-  <button>Add Recipe</button>
+  </form>
+  <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Cooking Time</mat-label>
+    <input #cookTime matInput type="text" formControlName="cookingTime" />
+    <mat-error *ngIf="cookingTime?.errors?.['required']">
+      Please fill the cooking time
+    </mat-error> </mat-form-field
+  ><br />
+  <form
+    class="ingredient-form"
+    [formGroup]="preparationStepsForm"
+    (ngSubmit)="onSubmitSteps()"
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label>Preparation steps</mat-label>
+      <input #prepStep matInput type="text" formControlName="step" />
+      <mat-error *ngIf="step?.errors?.['required']">
+        please fill the preparationSteps
+      </mat-error>
+    </mat-form-field>
+    <button class="btn">Add step</button>
+    <ul>
+      <li *ngFor="let step of preparationSteps; let i = index">
+        {{ step }} <button (click)="removeSteps(step)">remove</button>
+      </li>
+    </ul>
+  </form>
+  <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Serving Size</mat-label>
+    <input #servSize matInput type="text" formControlName="servingSize" />
+    <mat-error *ngIf="servingSize?.errors?.['required']">
+      Please fill the servingSize
+    </mat-error> </mat-form-field
+  ><br />
+  <button class="btn">Add Recipe</button>
 </form>
-
-<button (click)="goToFavo()">Favorites</button>
