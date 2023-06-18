@@ -17,7 +17,6 @@ export class FavComponentComponent {
     private route: Router,
     private http:HttpClient
   ) {}
-  noFav: boolean = true;
   // recipeList: recipeTemp = {
   //   title: '',
   //   img: '',
@@ -26,15 +25,9 @@ export class FavComponentComponent {
   // };
   favRecipes: any;
   ngOnInit() {
-    if (this.noFav) {
-      this.noFav = !this.noFav;
-    }
-    if (this.noFav && this.favRecipes.length == 0) {
-      this.noFav = true;
-    }
     this.router.paramMap.subscribe((route) => {
       const id = route.get('id') as string;
-
+      
       // console.log(id)
       this.recipeService.getFav().subscribe((data) => {
         this.favRecipes = data as any;
