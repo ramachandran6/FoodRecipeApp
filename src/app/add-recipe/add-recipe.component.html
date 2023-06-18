@@ -38,7 +38,7 @@
         please fill the ingredients
       </mat-error>
     </mat-form-field>
-    <button class="btn">Add Ingredient</button>
+    <button class="btn btn-secondary">Add Ingredient</button>
     <ul>
       <li *ngFor="let inc of incs; let i = index">
         {{ inc }} <button (click)="removeIng(inc)">remove</button>
@@ -65,7 +65,7 @@
         please fill the preparationSteps
       </mat-error>
     </mat-form-field>
-    <button class="btn">Add step</button>
+    <button class="btn btn-secondary">Add step</button>
     <ul>
       <li *ngFor="let step of preparationSteps; let i = index">
         {{ step }} <button (click)="removeSteps(step)">remove</button>
@@ -80,5 +80,5 @@
       Please fill the servingSize
     </mat-error> </mat-form-field
   ><br />
-  <button class="btn">Add Recipe</button>
+  <button class="btn btn-success">Add Recipe</button>
 </form>

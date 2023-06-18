@@ -1,8 +1,3 @@
-<div *ngIf="noFav">
-    <img src="https://media.tenor.com/BWPfBiOqbEsAAAAC/no-vadivelu.gif" alt="nothing" />
-</div>
-
-
 <div *ngFor="let recipe of favRecipes;let i = index" class="fav">
     <img src="{{recipe.img}}">
     <div class="tit-des">
@@ -18,8 +13,8 @@
         </ul>
     </div>
     <div class="buttons">
-        <button class="btn" (click)="delete(i)">Delete</button>
-    <button class="btn" (click)="recipeInfo(recipe.id)">Info</button>
+        <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+        <button class="btn btn-info" (click)="recipeInfo(recipe.id)">Info</button>
     </div>
     
 </div>

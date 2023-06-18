@@ -1,7 +1,28 @@
 .navbar{
     height: 75px;
-    font-family: 'Comforter', cursive;
     font-weight: bolder;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.logo > a > h2{
+    font-family: 'Comforter', cursive;
+    font-size: 45px;
+    margin-top: 13px;
+    color: black;
+}
+.logo > a{
+    text-decoration: none;
+}
+
+.logo > img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
 }
 
 .nav-item{

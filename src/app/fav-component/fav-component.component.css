@@ -9,6 +9,8 @@
     margin: 50px;
     padding: 20px;
     border-bottom: 2px solid rgba(208, 223, 229, 0.8);
+    background-color: aliceblue;
+    opacity: 85%;
 }
 
 img{
@@ -22,8 +24,8 @@ img{
 }
 
 .ing{
-    align-content: start;
     list-style: none;
+   padding: 0;
 }
 .buttons{
     display: flex;
